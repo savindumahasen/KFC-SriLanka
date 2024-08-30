@@ -7,8 +7,10 @@ import com.savindu.kfcsrilanka.model.Product;
 
 public class ProductService {
 	
+	private static ProductService productServiceObj;
 	
-public ProductService() {
+	
+private ProductService() {
 	
 }
 
@@ -17,6 +19,13 @@ private ProductManager getProductManagerDAO() {
 	return new ProductManagerImp();
 }
 
+public synchronized static ProductService ProductService() {
+	if(productServiceObj== null) {
+		productServiceObj=new ProductService();
+		
+	}
+	return productServiceObj;
+}
 public boolean addProduct(Product product) {
 	
 	return getProductManagerDAO().addProduct(product);
