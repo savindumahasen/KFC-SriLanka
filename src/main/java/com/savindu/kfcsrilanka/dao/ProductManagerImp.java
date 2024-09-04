@@ -1,5 +1,9 @@
 package com.savindu.kfcsrilanka.dao;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 
 import com.savindu.kfcsrilanka.model.Product;
@@ -16,15 +20,36 @@ public class ProductManagerImp implements ProductManager {
 	 */
 
 	@Override
-	public boolean addProduct(Product product) {
+	public boolean addProduct(Product product) throws SQLException {
 		// TODO Auto-generated method stub
+		Connection connection = getConnection();
+		//String query = "INSERT INTO product(name,price) VALUES ("+product.getProductName()+","+product.getProductPrice()+")";
+		//Statement st= connection.createStatement();
+		/* 	if (st.executeUpdate(query)>0) {
+			result=true;
+		*/
+		String query = "INSERT INTO product(name,price) VALUES (?,?)";
+		PreparedStatement ps = connection.prepareStatement(query);
+		ps.setString(1,  product.getProductName());
+		ps.setDouble(2, product.getProductPrice());
+
+		boolean result=false;
+		if(ps.executeUpdate(query)>0) {
+			result=true;
+	    }
+		ps.close();
+		connection.close();
 		return false;
+	}
+	private Connection getConnection() {
+		
+		return null;
 	}
 
 	@Override
-	public boolean editProduct(Product product) {
+	public boolean editProduct(Product product) throws SQLException {
 		// TODO Auto-generated method stub
-		return false;
+		
 	}
 
 	@Override
