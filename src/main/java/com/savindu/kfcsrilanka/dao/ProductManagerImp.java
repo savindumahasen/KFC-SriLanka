@@ -5,6 +5,15 @@ import java.util.List;
 import com.savindu.kfcsrilanka.model.Product;
 
 public class ProductManagerImp implements ProductManager {
+	/*
+	 * 1. Import packages
+	 * 2. Load the drivers
+	 * 3. Establish the connection
+	 * 4. Prepared the statement
+	 * 5. Execute the query
+	 * 6. Process the results
+	 * 7. Close the statement and connection
+	 */
 
 	@Override
 	public boolean addProduct(Product product) {
