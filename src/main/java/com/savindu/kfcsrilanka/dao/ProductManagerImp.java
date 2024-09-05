@@ -18,6 +18,10 @@ public class ProductManagerImp implements ProductManager {
 	 * 6. Process the results
 	 * 7. Close the statement and connection
 	 */
+	private Connection getConnection() {
+		
+		return null;
+	}
 
 	@Override
 	public boolean addProduct(Product product) throws SQLException {
@@ -28,7 +32,7 @@ public class ProductManagerImp implements ProductManager {
 		/* 	if (st.executeUpdate(query)>0) {
 			result=true;
 		*/
-		String query = "INSERT INTO product(name,price) VALUES (?,?)";
+		String query = "INSERT INTO product_kfc(name,price) VALUES (?,?)";
 		PreparedStatement ps = connection.prepareStatement(query);
 		ps.setString(1,  product.getProductName());
 		ps.setDouble(2, product.getProductPrice());
@@ -41,14 +45,27 @@ public class ProductManagerImp implements ProductManager {
 		connection.close();
 		return false;
 	}
-	private Connection getConnection() {
-		
-		return null;
-	}
 
 	@Override
 	public boolean editProduct(Product product) throws SQLException {
 		// TODO Auto-generated method stub
+		Connection connection =getConnection();
+		String query = "UPDATE product_kfc SET name=?, price=? WHERE product_code =?";
+		PreparedStatement ps =connection.prepareStatement(query);
+		ps.setString(1, product.getProductName());
+		ps.setDouble(2,product.getProductPrice());
+		ps.setInt(3,product.getProductCode());
+		boolean result =false;
+		if (ps.executeUpdate(query)>0) {
+			result=true;
+		}
+		
+		ps.close();
+		connection.close();
+		return false;
+		
+		
+		
 		
 	}
 
