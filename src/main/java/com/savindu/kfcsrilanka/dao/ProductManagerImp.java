@@ -1,6 +1,7 @@
 package com.savindu.kfcsrilanka.dao;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -8,6 +9,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.savindu.kfcsrilanka.dao.dbUtils.DbDriverManager;
+import com.savindu.kfcsrilanka.dao.dbUtils.DbDriverManagerFactory;
 import com.savindu.kfcsrilanka.model.Product;
 
 public class ProductManagerImp implements ProductManager {
@@ -20,11 +23,11 @@ public class ProductManagerImp implements ProductManager {
 	 * 6. Process the results
 	 * 7. Close the statement and connection
 	 */
-	private Connection getConnection() throws ClassNotFoundException {
-		Class.forName("com.mysql.jdbc.Driver.class");
-		
-		
-		return null;
+	private Connection getConnection() throws ClassNotFoundException, SQLException {
+		DbDriverManagerFactory driverFactory =new DbDriverManagerFactory();
+		DbDriverManager driverManager =driverFactory.getDbDriver("MySQL");
+		Connection connection = driverManager.getConnection();
+		return connection;
 	}
 
 	@Override
