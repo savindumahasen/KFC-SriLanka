@@ -8,7 +8,7 @@ public class DbDriverManagerMySqlImp implements DbDriverManager {
 
 	public Connection getConnection() throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
-		Class.forName("com.mysql.jdbc.Driver.class");
+		Class.forName("com.mysql.jdbc.Driver");
 		String url = "jdbc:mysql://localhost:3306";
 		String userName = "root";
         String password = "Savindu@123";
