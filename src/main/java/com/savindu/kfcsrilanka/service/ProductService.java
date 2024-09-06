@@ -1,4 +1,5 @@
 package com.savindu.kfcsrilanka.service;
+import java.sql.SQLException;
 import java.util.List;
 
 import com.savindu.kfcsrilanka.dao.ProductManager;
@@ -26,20 +27,20 @@ public synchronized static ProductService ProductService() {
 	}
 	return productServiceObj;
 }
-public boolean addProduct(Product product) {
+public boolean addProduct(Product product) throws ClassNotFoundException, SQLException {
 	
 	return getProductManagerDAO().addProduct(product);
 }
-public boolean editProduct(Product product) {
+public boolean editProduct(Product product) throws ClassNotFoundException, SQLException {
      return getProductManagerDAO().editProduct(product);	
 }
-public boolean deleteProduct(int productCode) {
+public boolean deleteProduct(int productCode) throws ClassNotFoundException, SQLException {
 	return getProductManagerDAO().deleteProduct(productCode);
 }
-public Product fetchSingleProduct(int productCode) {
+public Product fetchSingleProduct(int productCode) throws ClassNotFoundException, SQLException {
 	return getProductManagerDAO().fetchSingleProduct(productCode);
 }
-public List<Product> fetchAllProduct(){
+public List<Product> fetchAllProduct() throws ClassNotFoundException, SQLException{
 	return getProductManagerDAO().fetchAllProduct();
 }
 
