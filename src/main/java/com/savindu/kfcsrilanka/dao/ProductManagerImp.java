@@ -38,7 +38,7 @@ public class ProductManagerImp implements ProductManager {
 		ps.setDouble(2, product.getProductPrice());
 
 		boolean result=false;
-		if(ps.executeUpdate(query)>0) {
+		if(ps.executeUpdate()>0) {
 			result=true;
 	    }
 		ps.close();
@@ -56,13 +56,13 @@ public class ProductManagerImp implements ProductManager {
 		ps.setDouble(2,product.getProductPrice());
 		ps.setInt(3,product.getProductCode());
 		boolean result =false;
-		if (ps.executeUpdate(query)>0) {
+		if (ps.executeUpdate()>0) {
 			result=true;
 		}
 		
 		ps.close();
 		connection.close();
-		return false;
+		return result;
 		
 		
 		
@@ -70,9 +70,18 @@ public class ProductManagerImp implements ProductManager {
 	}
 
 	@Override
-	public boolean deleteProduct(int productCode) {
+	public boolean deleteProduct(int productCode) throws SQLException {
 		// TODO Auto-generated method stub
-		return false;
+		Connection connection =getConnection();
+		String query = "DELETE FROM product_kfc WHERE product_code=?";
+		PreparedStatement ps= connection.prepareStatement(query);
+		ps.setInt(0, productCode);
+		boolean result =false;
+		if (ps.executeUpdate()>0) {
+			result =true;
+		}
+		
+		return result;
 	}
 
 	@Override
