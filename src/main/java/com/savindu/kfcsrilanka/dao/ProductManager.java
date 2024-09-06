@@ -10,7 +10,7 @@ public interface ProductManager {
 	public boolean addProduct(Product product) throws SQLException;
 	public boolean editProduct(Product product) throws SQLException;
 	public boolean deleteProduct(int productCode) throws SQLException;
-	public Product fetchSingleProduct(int productCode);
+	public Product fetchSingleProduct(int productCode) throws SQLException;
 	public List<Product> fetchAllProduct();
 
 }

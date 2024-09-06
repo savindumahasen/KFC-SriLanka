@@ -2,6 +2,7 @@ package com.savindu.kfcsrilanka.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
@@ -85,9 +86,23 @@ public class ProductManagerImp implements ProductManager {
 	}
 
 	@Override
-	public Product fetchSingleProduct(int productCode) {
+	public Product fetchSingleProduct(int productCode) throws SQLException {
 		// TODO Auto-generated method stub
-		return null;
+		Connection connection = getConnection();
+		String query = "SELECT * FROM product_kfc WHERE product_code=?";
+		PreparedStatement ps = connection.prepareStatement(query);
+		ps.setInt(1, productCode);
+		ResultSet result =ps.executeQuery();
+		Product product = new Product();
+		while(result.next()) {
+			product.setProductCode(result.getInt("product_code"));
+			product.setProductName(result.getString("name"));
+			product.setProductPrice(result.getDouble("price"));
+		}
+		
+		ps.close();
+		connection.close();
+		return product;
 	}
 
 	@Override
