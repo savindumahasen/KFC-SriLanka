@@ -11,6 +11,6 @@ public interface ProductManager {
 	public boolean editProduct(Product product) throws SQLException;
 	public boolean deleteProduct(int productCode) throws SQLException;
 	public Product fetchSingleProduct(int productCode) throws SQLException;
-	public List<Product> fetchAllProduct();
+	public List<Product> fetchAllProduct() throws SQLException;
 
 }

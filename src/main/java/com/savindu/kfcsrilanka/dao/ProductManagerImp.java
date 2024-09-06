@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.savindu.kfcsrilanka.model.Product;
@@ -106,9 +107,23 @@ public class ProductManagerImp implements ProductManager {
 	}
 
 	@Override
-	public List<Product> fetchAllProduct() {
+	public List<Product> fetchAllProduct() throws SQLException {
 		// TODO Auto-generated method stub
-		return null;
+		Connection connection =getConnection();
+		String query = "SELECT * FROM product_kfc";
+		Statement st = connection.createStatement();
+		List<Product> productList = new ArrayList<Product>();
+		ResultSet result = st.executeQuery(query);
+		while (result.next()) {
+			Product product = new Product();
+			product.setProductCode(result.getInt("product_code"));
+			product.setProductName(result.getString("name"));
+			product.setProductPrice(result.getDouble("price"));
+			productList.add(product);
+		}
+	
+		
+		return productList;
 	}
 
 }
