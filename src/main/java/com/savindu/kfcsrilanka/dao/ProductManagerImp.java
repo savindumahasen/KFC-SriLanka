@@ -121,6 +121,8 @@ public class ProductManagerImp implements ProductManager {
 			product.setProductPrice(result.getDouble("price"));
 			productList.add(product);
 		}
+		st.close();
+		connection.close();
 	
 		
 		return productList;
