@@ -7,10 +7,10 @@ import com.savindu.kfcsrilanka.model.Product;
 
 public interface ProductManager {
 	
-	public boolean addProduct(Product product) throws SQLException;
-	public boolean editProduct(Product product) throws SQLException;
-	public boolean deleteProduct(int productCode) throws SQLException;
-	public Product fetchSingleProduct(int productCode) throws SQLException;
-	public List<Product> fetchAllProduct() throws SQLException;
+	public boolean addProduct(Product product) throws SQLException, ClassNotFoundException;
+	public boolean editProduct(Product product) throws SQLException, ClassNotFoundException;
+	public boolean deleteProduct(int productCode) throws SQLException, ClassNotFoundException;
+	public Product fetchSingleProduct(int productCode) throws SQLException, ClassNotFoundException;
+	public List<Product> fetchAllProduct() throws SQLException, ClassNotFoundException;
 
 }

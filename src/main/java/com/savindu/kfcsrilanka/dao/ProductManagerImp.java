@@ -20,13 +20,15 @@ public class ProductManagerImp implements ProductManager {
 	 * 6. Process the results
 	 * 7. Close the statement and connection
 	 */
-	private Connection getConnection() {
+	private Connection getConnection() throws ClassNotFoundException {
+		Class.forName("com.mysql.jdbc.Driver.class");
+		
 		
 		return null;
 	}
 
 	@Override
-	public boolean addProduct(Product product) throws SQLException {
+	public boolean addProduct(Product product) throws SQLException, ClassNotFoundException {
 		// TODO Auto-generated method stub
 		Connection connection = getConnection();
 		//String query = "INSERT INTO product(name,price) VALUES ("+product.getProductName()+","+product.getProductPrice()+")";
@@ -49,7 +51,7 @@ public class ProductManagerImp implements ProductManager {
 	}
 
 	@Override
-	public boolean editProduct(Product product) throws SQLException {
+	public boolean editProduct(Product product) throws SQLException, ClassNotFoundException {
 		// TODO Auto-generated method stub
 		Connection connection =getConnection();
 		String query = "UPDATE product_kfc SET name=?, price=? WHERE product_code =?";
@@ -72,7 +74,7 @@ public class ProductManagerImp implements ProductManager {
 	}
 
 	@Override
-	public boolean deleteProduct(int productCode) throws SQLException {
+	public boolean deleteProduct(int productCode) throws SQLException, ClassNotFoundException {
 		// TODO Auto-generated method stub
 		Connection connection =getConnection();
 		String query = "DELETE FROM product_kfc WHERE product_code=?";
@@ -87,7 +89,7 @@ public class ProductManagerImp implements ProductManager {
 	}
 
 	@Override
-	public Product fetchSingleProduct(int productCode) throws SQLException {
+	public Product fetchSingleProduct(int productCode) throws SQLException, ClassNotFoundException {
 		// TODO Auto-generated method stub
 		Connection connection = getConnection();
 		String query = "SELECT * FROM product_kfc WHERE product_code=?";
@@ -107,7 +109,7 @@ public class ProductManagerImp implements ProductManager {
 	}
 
 	@Override
-	public List<Product> fetchAllProduct() throws SQLException {
+	public List<Product> fetchAllProduct() throws SQLException, ClassNotFoundException {
 		// TODO Auto-generated method stub
 		Connection connection =getConnection();
 		String query = "SELECT * FROM product_kfc";
