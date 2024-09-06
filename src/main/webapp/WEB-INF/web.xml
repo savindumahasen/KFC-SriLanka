@@ -4,4 +4,18 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>ProductManager</servlet-name>
+  	<display-name>ProductManager</display-name>
+  	<description></description>
+  	<servlet-class>com.savindu.kfcsrilanka.controller.ProductManager</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ProductManager</servlet-name>
+  	<url-pattern>/productmanager</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ProductManager</servlet-name>
+  	<url-pattern>/getproduct</url-pattern>
+  </servlet-mapping>
 </web-app>
