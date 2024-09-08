@@ -6,34 +6,43 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class ProductManager
- */
+import com.savindu.kfcsrilanka.service.ProductService;
+
 public class ProductManager extends HttpServlet {
+	
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ProductManager() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
+	public ProductService getProductService() {
+		return  ProductService.getproductService()
+	}
+  
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+	
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		String action_type ="";
+		if(action_type.equals("add")) {
+			addProduct(request, response);
+		}else if (action_type.equals("edit")){
+			editProduct(request,response);
+		}else if(action_type.equals("delete")) {
+			deleteProduct(request, response);
+		}
 	}
-
+	
+	private void addProduct(HttpServletRequest request,HttpServletResponse response) {
+		
+	}
+	private void editProduct(HttpServletRequest request,HttpServletResponse response) {
+       
+   }
+	private void deleteProduct(HttpServletRequest request,HttpServletResponse response) {
+}
+	private void fetchSingleProduct(HttpServletRequest request,HttpServletResponse response) {
+		
+	}
+	private void fetchAllProduct(HttpServletRequest request,HttpServletResponse response) {
+		
+	}
 }
