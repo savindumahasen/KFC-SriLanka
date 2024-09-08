@@ -20,7 +20,7 @@ private ProductManager getProductManagerDAO() {
 	return new ProductManagerImp();
 }
 
-public synchronized static ProductService ProductService() {
+public synchronized static ProductService getproductService() {
 	if(productServiceObj== null) {
 		productServiceObj=new ProductService();
 		
