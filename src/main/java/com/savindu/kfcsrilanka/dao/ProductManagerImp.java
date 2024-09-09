@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
 import com.savindu.kfcsrilanka.dao.dbUtils.DbDriverManager;
 import com.savindu.kfcsrilanka.dao.dbUtils.DbDriverManagerFactory;
 import com.savindu.kfcsrilanka.model.Product;
@@ -27,6 +26,8 @@ public class ProductManagerImp implements ProductManager {
 		DbDriverManager driverManager =driverFactory.getDbDriver("MySQL");
 		Connection connection = driverManager.getConnection();
 		return connection;
+		
+	
 	}
 
 	@Override
@@ -49,7 +50,7 @@ public class ProductManagerImp implements ProductManager {
 	    }
 		ps.close();
 		connection.close();
-		return false;
+		return result;
 	}
 
 	@Override
