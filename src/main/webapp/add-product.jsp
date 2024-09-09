@@ -1,52 +1,49 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" isELIgnored="false"%>
-<%@ taglib  prefix="tag" uri= "http://java.sun.com/jsp/jstl/core"  %>
+<%@ taglib prefix="tag" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-   <title>KFC_sriLanka Online</title>
-   <!-- Latest compiled and minified css -->
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-   <!-- Latest Compiled javascript  -->
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <meta charset="ISO-8859-1">
+  <title>KFC_sriLanka Online</title>
+  <!-- Latest compiled and minified css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Latest Compiled javascript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <style type="text/css">
-        body {
-            background-color: #f8f9fa; /* Light background for contrast */
-        }
-        .navbar {
-            background-color: #e4002b; /* KFC red */
-            padding: 15px;
-            border-radius: 10px;
-        }
-        .nav-link {
-            color: white !important;
-            font-weight: bold;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        .nav-link:hover {
-            background-color: white;
-            color: #e4002b !important; /* Red on hover */
-        }
-        .nav-item1, .nav-item2, .nav-item3 {
-            display: inline-block;
-            margin-right: 20px;
-        }
-        .logo {
-            margin-right: 20px;
-        }
-        .logo img {
-            width: 120px; /* Adjust size of the logo */
-        }
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding-top: 20px;
-        }
-        body {
-      background-color: #f8f9fa; /* Light background */
+    body {
+        background-color: #f8f9fa; /* Light background for contrast */
+    }
+    .navbar {
+        background-color: #e4002b; /* KFC red */
+        padding: 15px;
+        border-radius: 10px;
+    }
+    .nav-link {
+        color: white !important;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+    .nav-link:hover {
+        background-color: white;
+        color: #e4002b !important; /* Red on hover */
+    }
+    .nav-item1, .nav-item2, .nav-item3 {
+        display: inline-block;
+        margin-right: 20px;
+    }
+    .logo {
+        margin-right: 20px;
+    }
+    .logo img {
+        width: 120px; /* Adjust size of the logo */
+    }
+    .container {
+        max-width: 1200px;
+        margin: auto;
+        padding-top: 20px;
     }
     .form-container {
       background-color: #fff;
@@ -92,6 +89,13 @@
     }
     .btn-submit:hover {
       background-color: #d40026; /* Darker red on hover */
+    }
+    /* Alert styling */
+    .alert {
+      text-align: center;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
   </style>
 </head>
 <body>
@@ -114,10 +118,17 @@
         </ul>
     </nav>
     <br/>
-   <div class="form-container" action="productmanager" method="post">
+   <div class="form-container">
     <div class="form-title">Add New Products</div>
-    <p>${feedbackmessage}</p>
-    <form>
+    
+    <!-- Display feedback message only when it's not empty -->
+    <c:if test="${not empty feedbackmessage}">
+        <div class="alert alert-info" role="alert">
+            ${feedbackmessage}
+        </div>
+    </c:if>
+    
+    <form action="productmanager" method="post">
       <div class="mb-3">
         <label for="productname" class="form-label">Product Name</label>
         <input type="text" class="form-control" id="productname" name="productname" placeholder="Enter product name" required>
@@ -126,8 +137,8 @@
         <label for="productprice" class="form-label">Product Price [LKR]</label>
         <input type="number" class="form-control" id="productprice" name="productprice" placeholder="Enter product price" required>
       </div>
-        <div class="mb-3">
-        <input type="hidden" class="form-control"  name="action_type" value="add">
+      <div class="mb-3">
+        <input type="hidden" class="form-control" name="action_type" value="add">
       </div>
       <button type="submit" class="btn-submit">Submit</button>
     </form>
