@@ -114,7 +114,7 @@
     </nav>
     <br/>
    <div class="form-container" action="productmanager" method="post">
-    <div class="form-title">Add New Product</div>
+    <div class="form-title">Add New Products</div>
     <form>
       <div class="mb-3">
         <label for="productname" class="form-label">Product Name</label>
