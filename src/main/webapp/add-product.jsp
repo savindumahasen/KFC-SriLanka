@@ -113,7 +113,7 @@
         </ul>
     </nav>
     <br/>
-   <div class="form-container">
+   <div class="form-container" action="productmanager" method="post">
     <div class="form-title">Add New Product</div>
     <form>
       <div class="mb-3">
