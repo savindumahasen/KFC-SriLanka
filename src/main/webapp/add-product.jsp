@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" isELIgnored="false"%>
+<%@ taglib  prefix="tag" uri= "http://java.sun.com/jsp/jstl/core"  %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -115,6 +116,7 @@
     <br/>
    <div class="form-container" action="productmanager" method="post">
     <div class="form-title">Add New Products</div>
+    <p>${feedbackmessage}</p>
     <form>
       <div class="mb-3">
         <label for="productname" class="form-label">Product Name</label>
