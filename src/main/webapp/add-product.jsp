@@ -122,7 +122,7 @@
       </div>
       <div class="mb-3">
         <label for="productprice" class="form-label">Product Price [LKR]</label>
-        <input type="text" class="form-control" id="productprice" name="productprice" placeholder="Enter product price" required>
+        <input type="number" class="form-control" id="productprice" name="productprice" placeholder="Enter product price" required>
       </div>
       <button type="submit" class="btn-submit">Submit</button>
     </form>
