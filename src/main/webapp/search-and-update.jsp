@@ -110,10 +110,10 @@
         </div>
         <ul class="nav">
             <li class="nav-item1">
-                <a class="nav-link active" aria-current="page" href="#">Add Product</a>
+                <a class="nav-link active" aria-current="page" href="#">Search and Update</a>
             </li>
             <li class="nav-item2">
-                <a class="nav-link" href="search-and-update.jsp">Search and Update Product</a>
+                <a class="nav-link" href="add-product.jsp">Add Product</a>
             </li>
             <li class="nav-item3">
                 <a class="nav-link" href="#">View All Products</a>
