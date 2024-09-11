@@ -114,7 +114,7 @@
             </li>
                <li class="nav-item3">
                 <a class="nav-link" href="update.jsp">Update Product</a>
-            </li>
+            </li> 
             <li class="nav-item4">
                 <a class="nav-link" href="#">View All Products</a>
             </li>

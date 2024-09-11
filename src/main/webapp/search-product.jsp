@@ -129,7 +129,10 @@
             <li class="nav-item2">
                 <a class="nav-link" href="add-product.jsp">Add Product</a>
             </li>
-            <li class="nav-item3">
+             <li class="nav-item3">
+                <a class="nav-link" href="update-product.jsp">Update Product</a>
+            </li>
+            <li class="nav-item4">
                 <a class="nav-link" href="#">View All Products</a>
             </li>
         </ul>
