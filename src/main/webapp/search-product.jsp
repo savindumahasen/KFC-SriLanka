@@ -77,8 +77,8 @@
     .form-control:focus {
       box-shadow: 0px 0px 5px rgba(228, 0, 43, 0.7); /* Red glow on focus */
     }
-    .btn-submit {
-      background-color: #e4002b; /* KFC red */
+    .btn-info{
+      background-color:#e4002b; /* KFC red */
       color: white;
       border: none;
       border-radius: 5px;
@@ -89,6 +89,20 @@
       margin-top: 20px;
       display: block;
       width: 100%;
+    }
+    .btn-submit {
+      background-color:#e4002b; /* KFC yellow */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: -50px;
+      display: block;
+      width: 40%;
+      margin-left:250px;
     }
     .btn-submit:hover {
       background-color: #d40026; /* Darker red on hover */
@@ -110,7 +124,7 @@
         </div>
         <ul class="nav">
             <li class="nav-item1">
-                <a class="nav-link active" aria-current="page" href="#">Search and Update</a>
+                <a class="nav-link active" aria-current="page" href="#">Search Product</a>
             </li>
             <li class="nav-item2">
                 <a class="nav-link" href="add-product.jsp">Add Product</a>
@@ -121,9 +135,20 @@
         </ul>
     </nav>
     <br/>
+    <div class="form-container">
+     <div class="form-title">Search Product</div>    
+        <form action="productmanager" method="post">
+          <div class="mb-3">
+           <label for="productcode" class="form-label">Product Code</label>
+           <input type="number" class="form-control" id="productcode" name="productcode" placeholder="Enter product code" required>
+           <input type="hidden" name = "action_type" value="single">
+           <button type="submit" class="btn-info">Search</button>
+         </div>
+        </form>
+      
+     </div>
+    </div>
 
-
-  </div>
     
 
 </body>
