@@ -110,9 +110,12 @@
                 <a class="nav-link active" aria-current="page" href="#">Add Product</a>
             </li>
             <li class="nav-item2">
-                <a class="nav-link" href="search-and-update.jsp">Search and Update Product</a>
+                <a class="nav-link" href="search-and-update.jsp">Search Product</a>
             </li>
-            <li class="nav-item3">
+               <li class="nav-item3">
+                <a class="nav-link" href="update.jsp">Update Product</a>
+            </li>
+            <li class="nav-item4">
                 <a class="nav-link" href="#">View All Products</a>
             </li>
         </ul>
