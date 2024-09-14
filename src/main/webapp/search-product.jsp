@@ -120,7 +120,7 @@
    <div class="container">
      <nav class="navbar">
         <div class="logo">
-            <a href="#"><img src="Images/KFC image.png" style="height:50px; width:50px"></a>
+            <a href="#"><img src="Images/KFC image.png" style="height:50px; width:100px"></a>
         </div>
         <ul class="nav">
             <li class="nav-item1">
@@ -140,7 +140,7 @@
     <br/>
     <div class="form-container">
      <div class="form-title">Search Product</div>    
-        <form action="productmanager" method="post">
+        <form action="productmanager">
           <div class="mb-3">
            <label for="productcode" class="form-label">Product Code</label>
            <input type="number" class="form-control" id="productcode" name="productcode" placeholder="Enter product code" required>
