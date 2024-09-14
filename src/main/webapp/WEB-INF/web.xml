@@ -10,6 +10,12 @@
   	<description></description>
   	<servlet-class>com.savindu.kfcsrilanka.controller.ProductManager</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>AdminLogin</servlet-name>
+  	<display-name>AdminLogin</display-name>
+  	<description></description>
+  	<servlet-class>com.savindu.kfcsrilanka.controller.AdminLogin</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>ProductManager</servlet-name>
   	<url-pattern>/productmanager</url-pattern>
@@ -17,5 +23,9 @@
   <servlet-mapping>
   	<servlet-name>ProductManager</servlet-name>
   	<url-pattern>/getproduct</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AdminLogin</servlet-name>
+  	<url-pattern>/adminlogin</url-pattern>
   </servlet-mapping>
 </web-app>
