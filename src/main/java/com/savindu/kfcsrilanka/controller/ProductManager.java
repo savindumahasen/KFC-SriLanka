@@ -68,14 +68,26 @@ public class ProductManager extends HttpServlet {
 		}
 		
 	
-	private void editProduct(HttpServletRequest request,HttpServletResponse response) {
-		int productCode = Integer.parseInt(request.getParameter("productcode"));
-		String productName = request.getParameter("productname");
-		double productPrice = Double.parseDouble(request.getParameter("productprice"));
+	private void editProduct(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+		clearMessage();
 		
-		/*if(getProductService().editProduct(productCode)) {
-			
-		}*/
+		Product product =new Product();
+		product.setProductCode(Integer.parseInt(request.getParameter("productcode")));
+		product.setProductName(request.getParameter("productname"));
+		product.setProductPrice(Double.parseDouble(request.getParameter("productprice")));
+		
+		try {
+			if(getProductService().editProduct(product)) {
+				message= "Product has successfully updated!";
+				
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			 message= e.getMessage();
+		}
+		request.setAttribute("feedbackmessage", message);
+		RequestDispatcher rd= request.getRequestDispatcher("Update-product.jsp");
+		rd.forward(request, response);
 		
 		
        
