@@ -139,7 +139,8 @@
     </nav>
     <br/>
     <div class="form-container">
-     <div class="form-title">Search Product</div>    
+     <div class="form-title">Search Product</div>  
+        <p style="color:red;">${feedbackmessage}</p>  
         <form action="productmanager">
           <div class="mb-3">
            <label for="productcode" class="form-label">Product Code</label>
