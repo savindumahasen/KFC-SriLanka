@@ -113,7 +113,7 @@
                 <a class="nav-link" href="search-product.jsp">Search Product</a>
             </li>
                <li class="nav-item3">
-                <a class="nav-link" href="update.jsp">Update Product</a>
+                <a class="nav-link" href="Update-product.jsp">Update Product</a>
             </li> 
             <li class="nav-item4">
                 <a class="nav-link" href="#">View All Products</a>

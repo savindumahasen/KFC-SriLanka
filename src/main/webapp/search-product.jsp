@@ -120,7 +120,7 @@
    <div class="container">
      <nav class="navbar">
         <div class="logo">
-            <a href="#"><img src="Images/KFC image.png" style="height:50px; width:100px"></a>
+            <a href="#"><img src="Images/KFC image.png" style="height:50px; width:50px"></a>
         </div>
         <ul class="nav">
             <li class="nav-item1">
@@ -130,7 +130,7 @@
                 <a class="nav-link" href="add-product.jsp">Add Product</a>
             </li>
              <li class="nav-item3">
-                <a class="nav-link" href="update-product.jsp">Update Product</a>
+                <a class="nav-link" href="Update-product.jsp">Update Product</a>
             </li>
             <li class="nav-item4">
                 <a class="nav-link" href="#">View All Products</a>
