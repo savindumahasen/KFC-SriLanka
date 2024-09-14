@@ -69,12 +69,22 @@ public class ProductManager extends HttpServlet {
 		
 	
 	private void editProduct(HttpServletRequest request,HttpServletResponse response) {
+		int productCode = Integer.parseInt(request.getParameter("productcode"));
+		String productName = request.getParameter("productname");
+		double productPrice = Double.parseDouble(request.getParameter("productprice"));
+		
+		/*if(getProductService().editProduct(productCode)) {
+			
+		}*/
+		
+		
        
    }
 	private void deleteProduct(HttpServletRequest request,HttpServletResponse response) {
 		
    }
 	private void fetchSingleProduct(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+		clearMessage();
 		int productCode = Integer.parseInt(request.getParameter("productcode"));
 		try {
 			Product product = getProductService().fetchSingleProduct(productCode);
@@ -98,5 +108,9 @@ public class ProductManager extends HttpServlet {
 	}
 	private void fetchAllProduct(HttpServletRequest request,HttpServletResponse response) {
 		
+	}
+	
+	private void clearMessage() {
+		message= "";
 	}
 }
