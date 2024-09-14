@@ -134,16 +134,16 @@
     <form action="productmanager" method="post">
       <div class="mb-3">
         <label for="productname" class="form-label">Product Name</label>
-        <input type="text" class="form-control" id="productname" name="productname" placeholder="Enter product name" required>
+        <input type="text" class="form-control" id="productname" name="productname" placeholder="Enter product name" required value="${product.productName}">
       </div>
       <div class="mb-3">
         <label for="productprice" class="form-label">Product Price [LKR]</label>
-        <input type="number" class="form-control" id="productprice" name="productprice" placeholder="Enter product price" required>
+        <input type="number" class="form-control" id="productprice" name="productprice" placeholder="Enter product price" required value = "${product.productPrice}">
       </div>
       <div class="mb-3">
         <input type="hidden" class="form-control" name="action_type" value="add">
       </div>
-      <button type="submit" class="btn-submit">Submit</button>
+      <button type="submit" class="btn-submit">Update</button>
     </form>
   </div>
 </div>
