@@ -111,10 +111,10 @@
       </div>
       <div class="mb-3">
         <label for="password" class="form-label">Password</label>
-        <input type="text" class="form-control" id="password" name="password" placeholder="Enter " required>
+        <input type="text" class="form-control" id="password" name="password" placeholder="Enter Password" required>
       </div>
       <div class="mb-3">
-        <input type="hidden" class="form-control" name="action_type" value="add">
+        <input type="hidden" class="form-control" name="action_type" value="login">
       </div>
       <button type="submit" class="btn-submit">Login</button>
     </form>
