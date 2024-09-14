@@ -24,6 +24,13 @@ public class ProductManager extends HttpServlet {
   
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	 String action_type= request.getParameter("action_type");
+	 if(action_type.equals("single")) {
+		 fetchSingleProduct(request,response);
+		 
+	 }else if (action_type.equals("all")) {
+		 fetchAllProduct(request,response);
+	 }
 	 RequestDispatcher rd= request.getRequestDispatcher("add-product.jsp");
 	 rd.forward(request, response);
 	}
@@ -67,7 +74,26 @@ public class ProductManager extends HttpServlet {
 	private void deleteProduct(HttpServletRequest request,HttpServletResponse response) {
 		
    }
-	private void fetchSingleProduct(HttpServletRequest request,HttpServletResponse response) {
+	private void fetchSingleProduct(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+		int productCode = Integer.parseInt(request.getParameter("productcode"));
+		try {
+			Product product = getProductService().fetchSingleProduct(productCode);
+			if(product.getProductCode()>0) {
+				request.setAttribute("product", product);
+				RequestDispatcher rd= request.getRequestDispatcher("Update-product.jsp");
+				rd.forward(request, response);
+			}else {
+				message =  "No Record found";
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			 message = e.getMessage();
+		}
+		request.setAttribute("feedbackmessage",message);
+		RequestDispatcher rd= request.getRequestDispatcher("search-product.jsp");
+		rd.forward(request, response);
+		
+		
 		
 	}
 	private void fetchAllProduct(HttpServletRequest request,HttpServletResponse response) {
