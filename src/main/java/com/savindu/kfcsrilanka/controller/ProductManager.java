@@ -83,7 +83,7 @@ public class ProductManager extends HttpServlet {
 				RequestDispatcher rd= request.getRequestDispatcher("Update-product.jsp");
 				rd.forward(request, response);
 			}else {
-				message =  "No Record found";
+				message =  "No Record found!";
 			}
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
