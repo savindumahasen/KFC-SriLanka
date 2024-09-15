@@ -34,22 +34,38 @@ public class AdminLoginController extends HttpServlet {
 		 System.out.println(userName);
 		 String password= request.getParameter("password");
 		 System.out.println(password);
+		 String confirmPassword = request.getParameter("confirmpassword");
+		 System.out.println(confirmPassword);
 		 
 		try {
 			Admin admin = getAdminService().fetchSingleAdmin(userName);
 			System.out.println(admin);
 			 if(admin.getUserName()!=null) {
-				 if((admin.getPassword()).equals(password)) {
-					 RequestDispatcher rd= request.getRequestDispatcher("add-product.jsp");
-					 rd.forward(request, response);
+				 if(((admin.getPassword()).equals(password))&&(confirmPassword.equals(confirmPassword)) ) {
+					 if(password.equals(confirmPassword)) {
+					     RequestDispatcher rd= request.getRequestDispatcher("add-product.jsp");
+					     rd.forward(request, response);
+					 }else {
+						 message = "Your confirmpassword and password are not matching";
+						 request.setAttribute("feedbackmessage",message);
+						 RequestDispatcher rd= request.getRequestDispatcher("AdminLogin.jsp");
+						 rd.forward(request, response);
+					 }
 				 }else {
-					 message = "Login is not successfull";
+					 message = "Login is not successfull, please check your password";
 				     request.setAttribute("feedbackmessage", message);
 					 RequestDispatcher rd= request.getRequestDispatcher("AdminLogin.jsp");
 					 rd.forward(request,response);
-					 
 				 }
-		} 
+					 
+		    }else {
+					 message = "Login is not successfull, please check your username";
+					 request.setAttribute("feedbackmessage",message);
+					 RequestDispatcher rd=request.getRequestDispatcher("AdminLogin.jsp");
+					 rd.forward(request, response);
+							 
+				 }
+		
 		}catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			message= e.getMessage();
