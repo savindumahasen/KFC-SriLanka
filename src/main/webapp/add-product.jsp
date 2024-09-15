@@ -103,7 +103,7 @@
 <div class="container">
     <nav class="navbar">
         <div class="logo">
-            <a href="Home.jsp"><img src="Images/KFC image.png" style="height:50px; width:50px"></a>
+            <a href="#"><img src="Images/KFC image.png" style="height:50px; width:50px"></a>
         </div>
         <ul class="nav">
             <li class="nav-item1">
