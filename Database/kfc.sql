@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 09, 2024 at 06:35 AM
+-- Generation Time: Sep 15, 2024 at 01:16 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -24,6 +24,25 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `UserName` varchar(50) NOT NULL,
+  `Password` varchar(50) NOT NULL,
+  `ConfirmPassword` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`UserName`, `Password`, `ConfirmPassword`) VALUES
+('admin123@gmail.com', 'admin123', 'admin123');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `product_kfc`
 --
 
@@ -39,13 +58,24 @@ CREATE TABLE `product_kfc` (
 
 INSERT INTO `product_kfc` (`product_code`, `name`, `price`) VALUES
 (1, 'chicken', 230),
-(2, 'KFC ICE CREAM', 456),
+(2, 'KFC vanila Ice cream', 590),
 (5, 'Mirrendara', 560),
-(6, 'Buriyani', 4500);
+(6, 'Buriyani', 4500),
+(7, 'Buriyani', 4500),
+(8, 'Nasigurani', 12500),
+(10, 'Lasanya', 670),
+(11, 'KFC 20 pices chicken bucket', 5900),
+(12, 'Coca Cola sugure free', 350);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`UserName`);
 
 --
 -- Indexes for table `product_kfc`
@@ -61,7 +91,7 @@ ALTER TABLE `product_kfc`
 -- AUTO_INCREMENT for table `product_kfc`
 --
 ALTER TABLE `product_kfc`
-  MODIFY `product_code` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `product_code` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
