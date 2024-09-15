@@ -103,6 +103,7 @@
 <img src="Images/KFC image.png"  width="100px" height="100px" style="margin-left:520px;">
    <div class="form-container">
     <div class="form-title">Admin Login</div>
+    <p style="color:red">${feedbackmessage}</p>
     
     <form action="adminlogin">
       <div class="mb-3">
