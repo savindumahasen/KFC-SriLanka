@@ -36,12 +36,14 @@
     }
     .logo {
         margin-right: 20px;
+        margin-top:-20px;
     }
     .logo img {
         width: 120px; /* Adjust size of the logo */
     }
     .container {
         max-width: 1200px;
+        margin-top:-20px;
         margin: auto;
         padding-top: 20px;
     }
@@ -50,6 +52,7 @@
       border-radius: 10px;
       padding: 30px;
       max-width: 500px;
+      margin-top:-50px;
       margin: 50px auto;
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     }
@@ -100,12 +103,13 @@
 </head>
 <body>
 <div class="container">
-<img src="Images/KFC image.png"  width="100px" height="100px" style="margin-left:520px;">
+<!-- <img src="Images/KFC image.png"  width="30px" height="30px" style="margin-left:550px;">-->
    <div class="form-container">
-    <div class="form-title">Admin Login</div>
-    <p style="color:red">${feedbackmessage}</p>
+    <div class="form-title"><img src="Images/KFC image.png"  width="35px" height="35px" style="margin-left:10px;"><br/>Admin Login</div>
     
+    <p style="color:red">${feedbackmessage}</p>
     <form action="adminlogin">
+     
       <div class="mb-3">
         <label for="username" class="form-label">UserName</label>
         <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username" required>
@@ -113,6 +117,10 @@
       <div class="mb-3">
         <label for="password" class="form-label">Password</label>
         <input type="text" class="form-control" id="password" name="password" placeholder="Enter Password" required>
+      </div>
+      <div class="mb-3">
+        <label for="confirmpassword" class="form-label">Confirm Password</label>
+        <input type="text" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Enter confirmPassword" required>
       </div>
       <div class="mb-3">
         <input type="hidden" class="form-control" name="action_type" value="login">
