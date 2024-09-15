@@ -19,7 +19,7 @@ public class AdminService {
 	}
 	
 	public synchronized static AdminService getAdminService() {
-		if(adminServiceObj.equals("null")) {
+		if(adminServiceObj == null){
 			adminServiceObj= new AdminService();
 		}
 		return adminServiceObj;
