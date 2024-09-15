@@ -23,7 +23,7 @@ public class AdminLoginImp implements AdminLogin {
 	public Admin fetchSingleAdmin(String userName) throws SQLException, ClassNotFoundException {
 		// TODO Auto-generated method stub
 		Connection connection = getConnection();
-		String query = "SELECT * FROM admin WHERE userName=?";
+		String query = "SELECT * FROM admin WHERE UserName=?";
 		PreparedStatement ps=connection.prepareStatement(query);
 		ps.setString(1,userName);
 		ResultSet result =ps.executeQuery();
@@ -37,5 +37,6 @@ public class AdminLoginImp implements AdminLogin {
 		connection.close();
 		return admin;
 	}
+	
 
 }
