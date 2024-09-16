@@ -19,7 +19,7 @@ public class CustomerRegisterImp implements CustomerRegister {
 	
 	}
 
-	public boolean customerRegistration(Customer customer) throws SQLException {
+	public boolean customerRegistration(Customer customer) throws SQLException, ClassNotFoundException {
 		// TODO Auto-generated method stub
 		Connection connection = getConnection();
 		String query= "INSERT INTO customer (UserName,Password,ConfirmPassword) VALUES (?,?,?)";
