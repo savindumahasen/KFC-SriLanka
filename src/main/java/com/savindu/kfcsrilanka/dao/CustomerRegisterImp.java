@@ -2,6 +2,7 @@ package com.savindu.kfcsrilanka.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.savindu.kfcsrilanka.dao.dbUtils.DbDriverManager;
@@ -31,7 +32,29 @@ public class CustomerRegisterImp implements CustomerRegister {
 		if(ps.executeUpdate()>0) {
 			result=true;
 		}
+		ps.close();
+		connection.close();
 		return result;
+	}
+
+	public Customer fetchSingleCustomer(String userName) throws SQLException, ClassNotFoundException {
+		// TODO Auto-generated method stub
+		Connection connection =getConnection();
+		String query = "SELECT * FROM customer WHERE UserName=?";
+		PreparedStatement ps =connection.prepareStatement(query);
+		ps.setString(1, userName);
+		ResultSet result=ps.executeQuery(); 
+		Customer customer=new Customer();
+		while(result.next()) {
+			customer.setUserName(result.getString("UserName"));
+			customer.setPassword(result.getString("Password"));
+			customer.setConfirmPassword(result.getString("ConfirmPassword"));
+			
+			
+		}
+		ps.close();
+		connection.close();
+		return customer;
 	}
 
 }
