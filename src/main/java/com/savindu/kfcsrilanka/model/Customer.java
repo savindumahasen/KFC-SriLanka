@@ -5,6 +5,10 @@ public class Customer {
 	private String password;
 	private String confirmPassword;
 	
+	public Customer() {
+		
+	}
+	
 	
 	public Customer(String userName, String password, String confirmPassword) {
 		 this.userName= userName;
