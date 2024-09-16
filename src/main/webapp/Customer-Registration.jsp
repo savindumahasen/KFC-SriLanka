@@ -108,7 +108,7 @@
     <div class="form-title"><img src="Images/KFC image.png"  width="35px" height="35px" style="margin-left:10px;"><br/>Customer Registration</div>
     
     <p style="color:red">${feedbackmessage}</p>
-    <form action="adminlogin">
+    <form action="customerregistrationcontroller" method="post">
      
       <div class="mb-3">
         <label for="username" class="form-label">UserName</label>
@@ -123,7 +123,7 @@
         <input type="text" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Enter confirmPassword" required>
       </div>
       <div class="mb-3">
-        <input type="hidden" class="form-control" name="action_type" value="login">
+        <input type="hidden" class="form-control" name="action_type" value="register">
       </div>
       <button type="submit" class="btn-submit">Registration</button>
     </form>
