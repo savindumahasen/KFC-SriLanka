@@ -22,6 +22,12 @@
   	<description></description>
   	<servlet-class>com.savindu.kfcsrilanka.controller.AdminLoginController</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>CustomerRegistrationController</servlet-name>
+  	<display-name>CustomerRegistrationController</display-name>
+  	<description></description>
+  	<servlet-class>com.savindu.kfcsrilanka.controller.CustomerRegistrationController</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>ProductManager</servlet-name>
   	<url-pattern>/productmanager</url-pattern>
@@ -33,5 +39,9 @@
   <servlet-mapping>
   	<servlet-name>AdminLoginController</servlet-name>
   	<url-pattern>/adminlogin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CustomerController</servlet-name>
+  	<url-pattern>/customercontroller</url-pattern>
   </servlet-mapping>
 </web-app>
