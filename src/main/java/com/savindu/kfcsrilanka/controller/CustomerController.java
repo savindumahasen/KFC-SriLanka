@@ -15,7 +15,7 @@ import com.savindu.kfcsrilanka.service.CustomerService;
 /**
  * Servlet implementation class CustomerRegistrationController
  */
-public class CustomerRegistrationController extends HttpServlet {
+public class CustomerController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	String message = "";
@@ -50,7 +50,7 @@ public class CustomerRegistrationController extends HttpServlet {
 		customer.setConfirmPassword(confirmPasswod);
 		try {
 			if(getCustomerService().customerRegister(customer)) {
-				RequestDispatcher rd= request.getRequestDispatcher("");
+				RequestDispatcher rd= request.getRequestDispatcher("CustomerLogin.jsp");
 				rd.forward(request, response);
 				
 			}else {
