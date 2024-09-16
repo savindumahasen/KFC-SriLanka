@@ -4,14 +4,19 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import com.savindu.kfcsrilanka.dao.dbUtils.DbDriverManager;
+import com.savindu.kfcsrilanka.dao.dbUtils.DbDriverManagerFactory;
 import com.savindu.kfcsrilanka.model.Customer;
 
 public class CustomerRegisterImp implements CustomerRegister {
 	
 	
-	private Connection getConnection() {
-		
-		return null;
+	private Connection getConnection() throws ClassNotFoundException, SQLException {
+		DbDriverManagerFactory driverFactory =new DbDriverManagerFactory();
+		DbDriverManager driverManager =driverFactory.getDbDriver("MySQL");
+		Connection connection = driverManager.getConnection();
+		return connection;
+	
 	}
 
 	public boolean customerRegistration(Customer customer) throws SQLException {
