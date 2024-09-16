@@ -131,6 +131,9 @@
             <li class="nav-item2">
                 <a class="nav-link" href="Customer-Registration.jsp">Registration</a>
             </li>
+              <li class="nav-item2">
+                <a class="nav-link" href="CustomerLogin.jsp">Login</a>
+            </li>
                <li class="nav-item3">
                 <a class="nav-link" href="menu.jsp">Menu</a>
             </li> 
