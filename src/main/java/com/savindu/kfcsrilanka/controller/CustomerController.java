@@ -29,6 +29,10 @@ public class CustomerController extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String action_type= request.getParameter("action_type");
+		if(action_type.equals("login")) {
+			customerLogin(request,response);
+		}
 		
 
 	}
@@ -67,6 +71,38 @@ public class CustomerController extends HttpServlet {
 			   rd.forward(request, response);
 		}
 		
+		
+		
+	}
+	private void customerLogin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String userName =request.getParameter("username");
+		String password=request.getParameter("password");
+		String confirmPassword =request.getParameter("confirmpassword");
+		Customer customer;
+		try {
+			customer = getCustomerService().fetchSingleCustomer(userName);
+			if(customer.getUserName() !=null) {
+				if((customer.getPassword()).equals(password) && (customer.getConfirmPassword().equals(confirmPassword))) {
+					 if(password.equals(confirmPassword)) {
+						  RequestDispatcher rd=request.getRequestDispatcher("Home.jsp");
+						  rd.forward(request, response);
+						 
+					 }else {
+						 message = "Your confirmpassword and password is not equal"; 	 
+					 }
+				}else {
+					message= "Please check your password and confirmpassword";
+				}
+			}else {
+				message = "User Cannot found! Please register first";
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			 message = e.getMessage();
+		}
+		 request.setAttribute("feedbackmessage", message);
+		 RequestDispatcher rd= request.getRequestDispatcher("CustomerLogin.jsp");
+		 rd.forward(request, response);
 		
 	}
 	
