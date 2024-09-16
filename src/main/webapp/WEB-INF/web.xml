@@ -11,10 +11,10 @@
   	<servlet-class>com.savindu.kfcsrilanka.controller.ProductManager</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>AdminLogin</servlet-name>
-  	<display-name>AdminLogin</display-name>
+  	<servlet-name>AdminLoginController</servlet-name>
+  	<display-name>AdminLoginController</display-name>
   	<description></description>
-  	<servlet-class>com.savindu.kfcsrilanka.controller.AdminLogin</servlet-class>
+  	<servlet-class>com.savindu.kfcsrilanka.controller.AdminLoginController</servlet-class>
   </servlet>
   <servlet>
   	<servlet-name>AdminLoginController</servlet-name>
@@ -23,10 +23,10 @@
   	<servlet-class>com.savindu.kfcsrilanka.controller.AdminLoginController</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>CustomerRegistrationController</servlet-name>
-  	<display-name>CustomerRegistrationController</display-name>
+  	<servlet-name>CustomerController</servlet-name>
+  	<display-name>CustomerController</display-name>
   	<description></description>
-  	<servlet-class>com.savindu.kfcsrilanka.controller.CustomerRegistrationController</servlet-class>
+  	<servlet-class>com.savindu.kfcsrilanka.controller.CustomerController</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>ProductManager</servlet-name>
