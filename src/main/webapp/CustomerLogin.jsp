@@ -108,7 +108,7 @@
     <div class="form-title"><img src="Images/KFC image.png"  width="35px" height="35px" style="margin-left:10px;"><br/>Customer Login</div>
     
     <p style="color:red">${feedbackmessage}</p>
-    <form action="adminlogin">
+    <form action="customercontroller">
      
       <div class="mb-3">
         <label for="username" class="form-label">UserName</label>
