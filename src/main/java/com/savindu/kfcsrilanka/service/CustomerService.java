@@ -32,5 +32,8 @@ public class CustomerService {
 		return getCustomerRegisterDao().customerRegistration(customer);
 		
 	}
+	public Customer fetchSingleCustomer(String userName) throws ClassNotFoundException, SQLException {
+		return getCustomerRegisterDao().fetchSingleCustomer(userName);
+	}
 
 }
