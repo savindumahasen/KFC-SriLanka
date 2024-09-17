@@ -92,7 +92,40 @@ public class ProductManager extends HttpServlet {
 		
        
    }
-	private void deleteProduct(HttpServletRequest request,HttpServletResponse response) {
+	private void deleteProduct(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+		clearMessage();
+		int productCode = Integer.parseInt(request.getParameter("productcode"));
+		Product product;
+		try {
+			product = getProductService().fetchSingleProduct(productCode);
+			try {
+				 if(product.getProductCode()>0) {
+			       if( getProductService().deleteProduct(productCode)) {
+			    	  message = "Product has deleted successfull!";
+			    
+			    	  
+			       }else {
+			    	  message = "Product has not deleted successfull!";
+			    	
+			    	  
+			      }
+				 }else {
+					 message = "Product cannot be found!";
+				 }
+				
+			} catch (ClassNotFoundException | SQLException e) {
+				// TODO Auto-generated catch block
+				message = e.getMessage();
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			message =  e.getMessage();
+		}
+		request.setAttribute("feedbackmessage", message);
+    	RequestDispatcher rd= request.getRequestDispatcher("Delete-product.jsp");
+    	rd.forward(request, response);
+		
+		
 		
    }
 	private void fetchSingleProduct(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
