@@ -103,65 +103,81 @@
       font-size: 16px;
       margin-bottom: 20px;
     }
+    /* Error message styling */
+    #error-message {
+      color: red;
+      text-align: center;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
 <div class="container">
     <nav class="navbar">
         <div class="logo">
-            <a href="Home.jsp"><img src="Images/homelogo.png" style= "width:50px; height="50px;"></a>
+            <a href="Home.jsp"><img src="Images/homelogo.png" style="width:50px; height="50px;"></a>
         </div>
         <ul class="nav">
             <li class="nav-item2">
                 <a class="nav-link" href="Customer-Registration.jsp">Customer Registration</a>
             </li>
-              <li class="nav-item2">
+            <li class="nav-item2">
                 <a class="nav-link" href="CustomerLogin.jsp">Customer Login</a>
             </li>
-               <li class="nav-item3">
+            <li class="nav-item3">
                 <a class="nav-link" href="Main.jsp">Menu</a>
             </li> 
-             <li class="nav-item3">
+            <li class="nav-item3">
                 <a class="nav-link" href="Beverages.jsp">Beverages</a>
             </li> 
         </ul>
     </nav>
-<!-- <img src="Images/KFC image.png"  width="30px" height="30px" style="margin-left:550px;">-->
+
    <div class="form-container">
-    <div class="form-title"><img src="Images/KFC image.png"  width="35px" height="35px" style="margin-left:10px;"><br/>Order Your Meals and Beverages</div>
-    
+    <div class="form-title">
+      <img src="Images/KFC image.png" width="35px" height="35px" style="margin-left:10px;">
+      <br/>
+      Order Your Meals and Beverages
+    </div>
+
     <p style="color:black">${feedbackmessage}</p>
-    <form action="orderscontroller" method="post">
+
+    <!-- Error message for validation -->
+    <div id="error-message"></div>
+
+    <form action="orderscontroller" method="post" onsubmit="return validateExactLength()">
      
       <div class="mb-3">
-        <label for="accountid" class="form-label">Please Enter You Account Number</label>
-        <input type="password" class="form-control" id="accountid" name="accountnumber" placeholder="Enter AccountNumber" required>
+        <label for="accountid" class="form-label">Please Enter Your Account Number</label>
+        <input type="password" class="form-control" id="accountid" name="accountnumber" placeholder="Enter Account Number" maxlength="8" required>
         <br/>
-        <label for="confirmaccountid" class="form-label">Please Enter You Account Number again</label>
-        <input type="password" class="form-control" id="confirmaccountid" name="confirmaccountnumber" placeholder="Enter AccountNumber again" required>
+        <label for="confirmaccountid" class="form-label">Please Enter Your Account Number Again</label>
+        <input type="password" class="form-control" id="confirmaccountid" name="confirmaccountnumber" placeholder="Enter Account Number Again" maxlength="8" required>
          
         <input type="hidden" name="action_type" value="order_now">
       </div>
-      <button onClick = "sendEmail()" type="submit" class="btn-submit">Order Now !!</button>
+      <button type="submit" class="btn-submit">Order Now !!</button>
     </form>
   </div>
 </div>
-<script src="https://smtpjs.com/v3/smtp.js"></script>
-<script>
-function sendEmail(){	     
-Email.send({
-    Host : "smtp.elasticemail.com",
-    Username : "savinduruhunuhewa@gmail.com",
-    Password : "0ADF9E9923B7A8B188349946D8E5DE95C4F8",
-    To : 'thumulasuraweera@gmail.com',
-    From : "savinduruhunuhewa@gmail.com",
-    Subject : "KFC Order",
-    Body : "Order is sucessfully confirmed!"
-}).then(
-  message => alert(message)
-);
-}
 
+<script>
+function validateExactLength() {
+  const accountNumber = document.getElementById('accountid').value;
+  const confirmAccountNumber = document.getElementById('confirmaccountid').value;
+  const errorMessage = document.getElementById('error-message');
+
+  // Check if both fields have exactly 8 digits
+  if (accountNumber.length !== 8) {
+    errorMessage.textContent = "Account Number must be exactly 8 digits.";
+    return false;
+  }
+
+  // Clear the error message and allow form submission
+  errorMessage.textContent = "";
+  return true;
+}
 </script>
 
 </body>
