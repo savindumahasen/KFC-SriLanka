@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 15, 2024 at 01:16 PM
+-- Generation Time: Sep 17, 2024 at 03:33 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -24,21 +24,23 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Table structure for table `customer`
 --
 
-CREATE TABLE `admin` (
+CREATE TABLE `customer` (
   `UserName` varchar(50) NOT NULL,
   `Password` varchar(50) NOT NULL,
   `ConfirmPassword` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `admin`
+-- Dumping data for table `customer`
 --
 
-INSERT INTO `admin` (`UserName`, `Password`, `ConfirmPassword`) VALUES
-('admin123@gmail.com', 'admin123', 'admin123');
+INSERT INTO `customer` (`UserName`, `Password`, `ConfirmPassword`) VALUES
+('bawantha@gmail.com', 'bawa@123', 'bawa@123'),
+('mahasen@gmail.com', '123', '123'),
+('surangaaravinda@gmail.com', 'arawinda@123', 'arawinda@123');
 
 -- --------------------------------------------------------
 
@@ -57,9 +59,6 @@ CREATE TABLE `product_kfc` (
 --
 
 INSERT INTO `product_kfc` (`product_code`, `name`, `price`) VALUES
-(1, 'chicken', 230),
-(2, 'KFC vanila Ice cream', 590),
-(5, 'Mirrendara', 560),
 (6, 'Buriyani', 4500),
 (7, 'Buriyani', 4500),
 (8, 'Nasigurani', 12500),
@@ -72,9 +71,9 @@ INSERT INTO `product_kfc` (`product_code`, `name`, `price`) VALUES
 --
 
 --
--- Indexes for table `admin`
+-- Indexes for table `customer`
 --
-ALTER TABLE `admin`
+ALTER TABLE `customer`
   ADD PRIMARY KEY (`UserName`);
 
 --
