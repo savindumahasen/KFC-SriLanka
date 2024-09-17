@@ -1,24 +1,22 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" isELIgnored="false"%>
-<%@ taglib prefix="tag" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="ISO-8859-1">
-  <title>KFC_sriLanka Online</title>
-  <!-- Latest compiled and minified css -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Latest Compiled javascript -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <style type="text/css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KFC Menu</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <style>
     body {
-        background-color: #f8f9fa; /* Light background for contrast */
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
     }
-    .navbar {
+   .navbar {
         background-color: #e4002b; /* KFC red */
         padding: 15px;
         border-radius: 10px;
-        margin-top:-150px;
+        margin-top:5px;
     }
     .nav-link {
         color: white !important;
@@ -41,105 +39,87 @@
     .logo img {
         width: 120px; /* Adjust size of the logo */
     }
-    .container {
+      .container {
         max-width: 1200px;
         margin: auto;
         padding-top: 20px;
     }
-     body {
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #f4f4f4;
-        }
+    
+    .video-container{
+        margin-left:330px;
+        margin-top:10px;
+     }
 
-        .video-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        iframe {
-            border: none;
-        }
-    .form-container {
-      background-color: #fff;
-      border-radius: 10px;
-      padding: 30px;
-      max-width: 500px;
-      margin: 50px auto;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    .menu-section {
+      padding: 50px 0;
+      h1{
+         text-align:center;
+         font-weight:bold;
+       }
     }
-    .form-title {
+    .menu-title {
       text-align: center;
-      color: #e4002b; /* KFC red */
-      margin-bottom: 30px;
-      font-weight: bold;
-      font-size: 24px;
+      color: #d32f2f;
+      margin-bottom: 50px;
     }
-    .form-label {
-      color: #333;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-    .form-control {
-      border-radius: 5px;
-      border: 2px solid #e4002b; /* Red border for input */
-      padding: 10px;
-      font-size: 16px;
-    }
-    .form-control:focus {
-      box-shadow: 0px 0px 5px rgba(228, 0, 43, 0.7); /* Red glow on focus */
-    }
-    .btn-submit {
-      background-color: #e4002b; /* KFC red */
-      color: white;
+    .card {
       border: none;
-      border-radius: 5px;
-      padding: 10px 20px;
-      font-size: 18px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      margin-top: 20px;
-      display: block;
-      width: 100%;
+      transition: transform 0.2s;
     }
-    .btn-submit:hover {
-      background-color: #d40026; /* Darker red on hover */
+    .card:hover {
+      transform: scale(1.05);
     }
-    /* Alert styling */
-    .alert {
+    .card img {
+      height: 200px;
+      width:200px;
+      margin-left:80px;
+     /* object-fit: cover;*/
+    }
+    .card-title {
+      color: #d32f2f;
+      font-weight: bold;
+    }
+    .btn-custom {
+      background-color: #d32f2f;
+      color: white;
+      
+      a{
+        color:white;
+        text-decoration:none;
+      }
+    }
+    .btn-custom:hover {
+      background-color: #b71c1c;
+    }
+    .footer {
+      background-color: #333;
+      color: white;
+      padding: 30px 0;
       text-align: center;
-      font-size: 16px;
-      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
-
-<div class="container">
-    <nav class="navbar">
+ <div class ="container">
+  <nav class="navbar">
         <div class="logo">
-            <a href="#"><img src="Images/homelogo.png" style= "width:50px; height="50px;"></a>
+            <a href="Home.jsp"><img src="Images/homelogo.png" style= "width:50px; height="50px;"></a>
         </div>
         <ul class="nav">
             <li class="nav-item1">
-                <a class="nav-link" href="Customer-Registration.jsp">Customer Registration</a>
+                <a class="nav-link" href="Customer-Registration.jsp">Registration</a>
             </li>
               <li class="nav-item2">
-                <a class="nav-link" href="CustomerLogin.jsp">Customer Login</a>
+                <a class="nav-link" href="CustomerLogin.jsp">Login</a>
             </li>
-               <li class="nav-item3">
-                <a class="nav-link" href="Main.jsp">Menu</a>
-            </li> 
+              <li class="nav-item3">
+                <a class="nav-link" href="Beverages.jsp">Beverages</a>
+            </li>
             <li class="nav-item4">
                 <a class="nav-link" href="#">View All Products</a>
             </li>
         </ul>
     </nav>
-    <br/><br/><br/>
     <div class="video-container">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/9xj9OvEmk1c?autoplay=1&mute=1" 
                 title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -147,7 +127,60 @@
         </iframe>
     </div>
 
-</div>
+  <!-- Menu Section -->
+  <section class="menu-section">
+    <h1> Best Chrisphy Chicken SirLanka</h1>
+    <div class="container">
+      <div class="row">
+        <!-- Menu Item 1 -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="Images/crispy.jpeg" class="card-img-top" alt="Chicken">
+            <div class="card-body text-center">
+            </div>
+          </div>
+        </div>
 
+        <!-- Menu Item 2 -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="Images/Half4Pc.jpeg" class="card-img-top" alt="Chicken">
+            <div class="card-body text-center">
+            </div>
+          </div>
+        </div>
+
+        <!-- Menu Item 3 -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="Images/Bucket6Pc.jpeg" class="card-img-top" alt="Chicken">
+            <div class="card-body text-center">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+ </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2024 KFC. All rights reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
