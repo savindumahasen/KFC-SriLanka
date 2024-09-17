@@ -16,7 +16,7 @@
     }
     .navbar {
         background-color: #e4002b; /* KFC red */
-        padding: 15px;
+        padding: 10px;
         border-radius: 10px;
     }
     .nav-link {
@@ -36,7 +36,7 @@
     }
     .logo {
         margin-right: 20px;
-        margin-top:-20px;
+        margin-top:5px;
     }
     .logo img {
         width: 120px; /* Adjust size of the logo */
@@ -93,6 +93,10 @@
     .btn-submit:hover {
       background-color: #d40026; /* Darker red on hover */
     }
+    a{
+       text-decoration:none;
+       color:black;
+    }
     /* Alert styling */
     .alert {
       text-align: center;
@@ -103,6 +107,28 @@
 </head>
 <body>
 <div class="container">
+    <nav class="navbar">
+        <div class="logo">
+            <a href="Home.jsp"><img src="Images/homelogo.png" style= "width:50px; height="50px;"></a>
+        </div>
+        <ul class="nav">
+            <li class="nav-item2">
+                <a class="nav-link" href="Customer-Registration.jsp">Registration</a>
+            </li>
+              <li class="nav-item2">
+                <a class="nav-link" href="CustomerLogin.jsp">Login</a>
+            </li>
+               <li class="nav-item3">
+                <a class="nav-link" href="Main.jsp">Menu</a>
+            </li> 
+             <li class="nav-item3">
+                <a class="nav-link" href="Beverages.jsp">Beverages</a>
+            </li> 
+            <li class="nav-item4">
+                <a class="nav-link" href="#">View All Products</a>
+            </li>
+        </ul>
+    </nav>
 <!-- <img src="Images/KFC image.png"  width="30px" height="30px" style="margin-left:550px;">-->
    <div class="form-container">
     <div class="form-title"><img src="Images/KFC image.png"  width="35px" height="35px" style="margin-left:10px;"><br/>Order Your Meals and Beverages</div>

@@ -72,6 +72,10 @@
     .btn-custom {
       background-color: #d32f2f;
       color: white;
+      a{
+       text-decoration:white;
+       color:white;
+       }
     }
     .btn-custom:hover {
       background-color: #b71c1c;
@@ -115,44 +119,51 @@
       <div class="row">
         <!-- Menu Item 1 -->
         <div class="col-md-4 mb-4">
+        <form action="orderscontroller" method="post">
           <div class="card">
             <img src="Images/Pepsi.jpeg" class="card-img-top" alt="Chicken">
             <div class="card-body text-center">
               <h5 class="card-title">Beverages</h5>
               <p class="card-text">Pepsi 400ml</p>
               <p class="card-text"><strong>Rs.250</strong></p>
-              <button class="btn btn-custom">Order</button>
+              <button class="btn btn-custom"><a href="Orders.jsp">Order</a></button>
             </div>
           </div>
+        </form>
         </div>
 
         <!-- Menu Item 2 -->
         <div class="col-md-4 mb-4">
+        <form action="orderscontroller" method="post">
           <div class="card">
             <img src="Images/7-Up.jpeg" class="card-img-top" alt="Chicken">
             <div class="card-body text-center">
               <h5 class="card-title">Beverages</h5>
               <p class="card-text">7-Up 400ml</p>
               <p class="card-text"><strong>Rs.250</strong></p>
-              <button class="btn btn-custom">Order</button>
+              <button class="btn btn-custom"><a href="Orders.jsp">Order</a></button>
             </div>
           </div>
+          </form>
         </div>
 
         <!-- Menu Item 3 -->
         <div class="col-md-4 mb-4">
+        <form action="orderscontroller" method="post">
           <div class="card">
             <img src="Images/mineralwater.jpeg" class="card-img-top" alt="Chicken">
             <div class="card-body text-center">
               <h5 class="card-title">Beverages</h5>
               <p class="card-text">Mineral Water</p>
               <p class="card-text"><strong>Rs.90</strong></p>
-              <button class="btn btn-custom">Order</button>
-            </div>
+              <button class="btn btn-custom"><a href="Orders.jsp">Order</a></button>
+             </div>
           </div>
+          </form>
+         </form>
         </div>
 
-        <!-- Add more menu items as needed -->
+
 
       </div>
     </div>

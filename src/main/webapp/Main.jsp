@@ -16,7 +16,7 @@
         background-color: #e4002b; /* KFC red */
         padding: 15px;
         border-radius: 10px;
-        margin-top:10px;
+        margin-top:5px;
     }
     .nav-link {
         color: white !important;
