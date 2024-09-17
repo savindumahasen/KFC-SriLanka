@@ -166,7 +166,7 @@
               <h5 class="card-title">Burgers</h5>
               <p class="card-text">KFC Zinger Burger.</p>
               <p class="card-text"><strong>Rs.1260</strong></p>
-              <button class="btn btn-custom"><a href="Orders.jsp">Orders</a></button>
+              <button class="btn btn-custom"><a href="Orders.jsp">Order</a></button>
             </div>
           </div>
         </div>
@@ -177,7 +177,7 @@
               <h5 class="card-title">Burgers</h5> 
               <p class="card-text">KFC Zinger Burger with Cheese</p>
               <p class="card-text"><strong>Rs.1410</strong></p>
-              <button class="btn btn-custom"><a href="Orders.jsp">Orders</a></button>
+              <button class="btn btn-custom"><a href="Orders.jsp">Order</a></button>
             </div>
           </div>
         </div>
@@ -188,7 +188,7 @@
               <h5 class="card-title">Burgers</h5> 
               <p class="card-text">Veggie Burger</p>
               <p class="card-text"><strong>Rs. 980</strong></p>
-              <button class="btn btn-custom"><a href="Orders.jsp">Orders</a></button>
+              <button class="btn btn-custom"><a href="Orders.jsp">Order</a></button>
             </div>
           </div>
         </div>
