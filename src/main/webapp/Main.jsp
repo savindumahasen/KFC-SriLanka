@@ -152,7 +152,7 @@
               <p class="card-text">Bucket/6PC (H&C).</p>
               <p class="card-text"><strong>Rs.3190</strong></p>
               <input type="hidden" name="action_type" value="order">
-              <button class="btn btn-custom"><a href="Order.jsp">Order</a></button>
+              <button class="btn btn-custom"><a href="Orders.jsp">Order</a></button>
             </form>
             </div>
           </div>
