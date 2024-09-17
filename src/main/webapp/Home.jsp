@@ -91,6 +91,15 @@
     .btn-custom:hover {
       background-color: #b71c1c;
     }
+    .btn{
+             margin-left:-18em;
+             margin-top:20px;
+             
+             a{
+             text-decoration:none;
+             color:white;
+             }
+    }
     .footer {
       background-color: #333;
       color: white;
@@ -157,7 +166,9 @@
             <div class="card-body text-center">
             </div>
           </div>
+          <button type="submit" class="btn btn-danger"><a href="Main.jsp">Order Now !!</a></button>
         </div>
+       
 
       </div>
     </div>
