@@ -97,6 +97,9 @@
             <a href="Home.jsp"><img src="Images/homelogo.png" style= "width:50px; height="50px;"></a>
         </div>
         <ul class="nav">
+           <li class="nav-item2">
+                <a class="nav-link" href="Home.jsp">Home</a>
+            </li>
             <li class="nav-item2">
                 <a class="nav-link" href="Customer-Registration.jsp">Registration</a>
             </li>
@@ -149,7 +152,7 @@
               <p class="card-text">Bucket/6PC (H&C).</p>
               <p class="card-text"><strong>Rs.3190</strong></p>
               <input type="hidden" name="action_type" value="order">
-              <button class="btn btn-custom" type="submit">Order</button>
+              <button class="btn btn-custom"><a href="Order.jsp">Order</a></button>
             </form>
             </div>
           </div>

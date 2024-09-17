@@ -95,20 +95,17 @@
             <a href="Home.jsp"><img src="Images/homelogo.png" style= "width:50px; height="50px;"></a>
         </div>
         <ul class="nav">
+            <li class="nav-item1">
+                <a class="nav-link" href="Home.jsp">Home</a>
+            </li>
             <li class="nav-item2">
                 <a class="nav-link" href="Customer-Registration.jsp">Registration</a>
             </li>
               <li class="nav-item2">
                 <a class="nav-link" href="CustomerLogin.jsp">Login</a>
             </li>
-              <li class="nav-item3">
-                <a class="nav-link" href="Beverages.jsp">Beverages</a>
-            </li>
             <li class="nav-item4">
                 <a class="nav-link" href="Main.jsp">Main</a>
-            </li>
-            <li class="nav-item5">
-                <a class="nav-link" href="#">View All Products</a>
             </li>
         </ul>
     </nav>
