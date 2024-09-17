@@ -30,7 +30,7 @@ public class OrdersController extends HttpServlet {
 			String accountNumber = request.getParameter("accountnumber");
 			String confirmAccountNumber = request.getParameter("confirmaccountnumber");
 			if(accountNumber.equals(confirmAccountNumber)) {
-				message = "Order is successfully confirmed!, Please check your email account";
+				message = "Order is successfully confirmed!";
 			    request.setAttribute("feedbackmessage",message);
 			    RequestDispatcher rd=request.getRequestDispatcher("Orders.jsp");
 			    rd.forward(request, response);
