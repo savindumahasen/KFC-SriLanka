@@ -113,10 +113,10 @@
         </div>
         <ul class="nav">
             <li class="nav-item2">
-                <a class="nav-link" href="Customer-Registration.jsp">Registration</a>
+                <a class="nav-link" href="Customer-Registration.jsp">Customer Registration</a>
             </li>
               <li class="nav-item2">
-                <a class="nav-link" href="CustomerLogin.jsp">Login</a>
+                <a class="nav-link" href="CustomerLogin.jsp">Customer Login</a>
             </li>
                <li class="nav-item3">
                 <a class="nav-link" href="Main.jsp">Menu</a>
@@ -124,16 +124,13 @@
              <li class="nav-item3">
                 <a class="nav-link" href="Beverages.jsp">Beverages</a>
             </li> 
-            <li class="nav-item4">
-                <a class="nav-link" href="#">View All Products</a>
-            </li>
         </ul>
     </nav>
 <!-- <img src="Images/KFC image.png"  width="30px" height="30px" style="margin-left:550px;">-->
    <div class="form-container">
     <div class="form-title"><img src="Images/KFC image.png"  width="35px" height="35px" style="margin-left:10px;"><br/>Order Your Meals and Beverages</div>
     
-    <p style="color:red">${feedbackmessage}</p>
+    <p style="color:black">${feedbackmessage}</p>
     <form action="orderscontroller" method="post">
      
       <div class="mb-3">
@@ -145,10 +142,27 @@
          
         <input type="hidden" name="action_type" value="order_now">
       </div>
-      <button type="submit" class="btn-submit">Order Now !!</button>
+      <button onClick = "sendEmail()" type="submit" class="btn-submit">Order Now !!</button>
     </form>
   </div>
 </div>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+function sendEmail(){	     
+Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "savinduruhunuhewa@gmail.com",
+    Password : "0ADF9E9923B7A8B188349946D8E5DE95C4F8",
+    To : 'thumulasuraweera@gmail.com',
+    From : "savinduruhunuhewa@gmail.com",
+    Subject : "KFC Order",
+    Body : "Order is sucessfully confirmed!"
+}).then(
+  message => alert(message)
+);
+}
+
+</script>
 
 </body>
 </html>
