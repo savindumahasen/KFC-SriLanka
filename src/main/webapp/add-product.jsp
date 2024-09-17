@@ -30,7 +30,7 @@
         background-color: white;
         color: #e4002b !important; /* Red on hover */
     }
-    .nav-item1, .nav-item2, .nav-item3 {
+    .nav-item1, .nav-item2, .nav-item3, .nav-tem4, .nav-item5 {
         display: inline-block;
         margin-right: 20px;
     }
@@ -116,6 +116,9 @@
                 <a class="nav-link" href="Update-product.jsp">Update Product</a>
             </li> 
             <li class="nav-item4">
+                <a class="nav-link" href="Delete-product.jsp">Delete Product</a>
+            </li> 
+            <li class="nav-item5">
                 <a class="nav-link" href="#">View All Products</a>
             </li>
         </ul>
