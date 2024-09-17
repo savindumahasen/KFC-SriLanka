@@ -106,9 +106,6 @@
               <li class="nav-item4">
                 <a class="nav-link" href="Beverages.jsp">Beverages</a>
             </li>
-            <li class="nav-item4">
-                <a class="nav-link" href="#">View All Products</a>
-            </li>
         </ul>
     </nav>
 
