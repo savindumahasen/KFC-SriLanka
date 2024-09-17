@@ -105,7 +105,7 @@
 <div class="container">
 <!-- <img src="Images/KFC image.png"  width="30px" height="30px" style="margin-left:550px;">-->
    <div class="form-container">
-    <div class="form-title"><img src="Images/KFC image.png"  width="35px" height="35px" style="margin-left:10px;"><br/>Customer Login</div>
+    <div class="form-title"><a href="Home.jsp"><img src="Images/KFC image.png"  width="35px" height="35px" style="margin-left:10px;"></a><br/>Customer Login</div>
     
     <p style="color:red">${feedbackmessage}</p>
     <form action="customercontroller">

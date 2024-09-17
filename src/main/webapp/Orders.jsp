@@ -136,7 +136,7 @@
 
    <div class="form-container">
     <div class="form-title">
-      <img src="Images/KFC image.png" width="35px" height="35px" style="margin-left:10px;">
+      <a href="Home.jsp"><img src="Images/KFC image.png" width="35px" height="35px" style="margin-left:10px;"></a>
       <br/>
       Order Your Meals and Beverages
     </div>
