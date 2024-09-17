@@ -18,7 +18,7 @@
         background-color: #e4002b; /* KFC red */
         padding: 15px;
         border-radius: 10px;
-        margin-top:-200px;
+        margin-top:-150px;
     }
     .nav-link {
         color: white !important;
@@ -135,7 +135,7 @@
                 <a class="nav-link" href="CustomerLogin.jsp">Login</a>
             </li>
                <li class="nav-item3">
-                <a class="nav-link" href="menu.jsp">Menu</a>
+                <a class="nav-link" href="Main.jsp">Menu</a>
             </li> 
             <li class="nav-item4">
                 <a class="nav-link" href="#">View All Products</a>
