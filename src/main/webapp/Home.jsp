@@ -31,7 +31,7 @@
         background-color: white;
         color: #e4002b !important; /* Red on hover */
     }
-    .nav-item1, .nav-item2, .nav-item3 {
+    .nav-item1, .nav-item2, .nav-item3, .nav-item4 {
         display: inline-block;
         margin-right: 20px;
     }
@@ -126,13 +126,10 @@
         </div>
         <ul class="nav">
             <li class="nav-item1">
-                <a class="nav-link active" aria-current="page" href="AdminLogin.jsp">Admin</a>
-            </li>
-            <li class="nav-item2">
-                <a class="nav-link" href="Customer-Registration.jsp">Registration</a>
+                <a class="nav-link" href="Customer-Registration.jsp">Customer Registration</a>
             </li>
               <li class="nav-item2">
-                <a class="nav-link" href="CustomerLogin.jsp">Login</a>
+                <a class="nav-link" href="CustomerLogin.jsp">Customer Login</a>
             </li>
                <li class="nav-item3">
                 <a class="nav-link" href="Main.jsp">Menu</a>
