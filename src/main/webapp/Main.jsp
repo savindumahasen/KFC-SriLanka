@@ -73,6 +73,11 @@
     .btn-custom {
       background-color: #d32f2f;
       color: white;
+      
+      a{
+        color:white;
+        text-decoration:none;
+      }
     }
     .btn-custom:hover {
       background-color: #b71c1c;
@@ -119,7 +124,7 @@
               <h5 class="card-title">Hot and Crispy Chicken</h5>
               <p class="card-text">Quarter/2Pc (HC)</p>
               <p class="card-text"><strong>Rs.1170</strong></p>
-              <button class="btn btn-custom">Order</button>
+              <button class="btn btn-custom"><a href="Orders.jsp">Orders</a></button>
             </div>
           </div>
         </div>
@@ -132,7 +137,7 @@
               <h5 class="card-title">Hot and Crispy Chicken</h5>
               <p class="card-text">Half/4Pc (Half).</p>
               <p class="card-text"><strong>Rs.2190</strong></p>
-              <button class="btn btn-custom">Order</button>
+              <button class="btn btn-custom"><a href="Orders.jsp">Orders</a></button>
             </div>
           </div>
         </div>
@@ -142,10 +147,13 @@
           <div class="card">
             <img src="Images/Bucket6Pc.jpeg" class="card-img-top" alt="Chicken">
             <div class="card-body text-center">
+            <form action="orderscontroller" method="post">
               <h5 class="card-title">Hot and Crispy Chicken</h5>
               <p class="card-text">Bucket/6PC (H&C).</p>
               <p class="card-text"><strong>Rs.3190</strong></p>
-              <button class="btn btn-custom">Order</button>
+              <input type="hidden" name="action_type" value="order">
+              <button class="btn btn-custom" type="submit">Order</button>
+            </form>
             </div>
           </div>
         </div>
@@ -158,7 +166,7 @@
               <h5 class="card-title">Burgers</h5>
               <p class="card-text">KFC Zinger Burger.</p>
               <p class="card-text"><strong>Rs.1260</strong></p>
-              <button class="btn btn-custom">Order</button>
+              <button class="btn btn-custom"><a href="Orders.jsp">Orders</a></button>
             </div>
           </div>
         </div>
@@ -169,7 +177,7 @@
               <h5 class="card-title">Burgers</h5> 
               <p class="card-text">KFC Zinger Burger with Cheese</p>
               <p class="card-text"><strong>Rs.1410</strong></p>
-              <button class="btn btn-custom">Order</button>
+              <button class="btn btn-custom"><a href="Orders.jsp">Orders</a></button>
             </div>
           </div>
         </div>
@@ -180,7 +188,7 @@
               <h5 class="card-title">Burgers</h5> 
               <p class="card-text">Veggie Burger</p>
               <p class="card-text"><strong>Rs. 980</strong></p>
-              <button class="btn btn-custom">Order</button>
+              <button class="btn btn-custom"><a href="Orders.jsp">Orders</a></button>
             </div>
           </div>
         </div>
