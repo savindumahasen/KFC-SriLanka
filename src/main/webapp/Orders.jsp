@@ -169,7 +169,7 @@ function validateExactLength() {
   const errorMessage = document.getElementById('error-message');
 
   // Check if both fields have exactly 8 digits
-  if (accountNumber.length !== 8) {
+  if (accountNumber.length !== 12) {
     errorMessage.textContent = "Account Number must be exactly 8 digits.";
     return false;
   }
