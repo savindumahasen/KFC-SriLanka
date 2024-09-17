@@ -108,6 +108,9 @@
     <div class="form-title"><a href="Home.jsp"><img src="Images/KFC image.png"  width="35px" height="35px" style="margin-left:10px;"></a><br/>Customer Registration</div>
     
     <p style="color:red">${feedbackmessage}</p>
+    
+    <div id="error-message"></div>
+    
     <form action="customercontroller" method="post">
      
       <div class="mb-3">
