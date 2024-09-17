@@ -75,6 +75,7 @@ public class CustomerController extends HttpServlet {
 		
 	}
 	private void customerLogin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		clearMessage();
 		String userName =request.getParameter("username");
 		String password=request.getParameter("password");
 		String confirmPassword =request.getParameter("confirmpassword");
@@ -84,7 +85,7 @@ public class CustomerController extends HttpServlet {
 			if(customer.getUserName() !=null) {
 				if((customer.getPassword()).equals(password) && (customer.getConfirmPassword().equals(confirmPassword))) {
 					 if(password.equals(confirmPassword)) {
-						  RequestDispatcher rd=request.getRequestDispatcher("Home.jsp");
+						  RequestDispatcher rd=request.getRequestDispatcher("Main.jsp");
 						  rd.forward(request, response);
 						 
 					 }else {
@@ -104,6 +105,9 @@ public class CustomerController extends HttpServlet {
 		 RequestDispatcher rd= request.getRequestDispatcher("CustomerLogin.jsp");
 		 rd.forward(request, response);
 		
+	}
+	private void clearMessage() {
+		message="";
 	}
 	
 
