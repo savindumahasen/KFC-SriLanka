@@ -82,7 +82,7 @@ public class ProductManagerImp implements ProductManager {
 		Connection connection =getConnection();
 		String query = "DELETE FROM product_kfc WHERE product_code=?";
 		PreparedStatement ps= connection.prepareStatement(query);
-		ps.setInt(0, productCode);
+		ps.setInt(1, productCode);
 		boolean result =false;
 		if (ps.executeUpdate()>0) {
 			result =true;
