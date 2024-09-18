@@ -30,12 +30,21 @@ public class OrdersController extends HttpServlet {
 			String accountNumber = request.getParameter("accountnumber");
 			String confirmAccountNumber = request.getParameter("confirmaccountnumber");
 			if(accountNumber.equals(confirmAccountNumber)) {
-				message = "Order is successfully confirmed!";
-			    request.setAttribute("feedbackmessage",message);
-			    RequestDispatcher rd=request.getRequestDispatcher("Orders.jsp");
-			    rd.forward(request, response);
+				if(accountNumber.length() >=12) {
+				 message = "Order is successfully confirmed!";
+			     request.setAttribute("feedbackmessage",message);
+			     RequestDispatcher rd=request.getRequestDispatcher("Orders.jsp");
+			     rd.forward(request, response);
+				}
+			    else {
+			    	message = "Your Account Number should have 12 numbers";
+			    	request.setAttribute("feedbackmessage",message);
+					RequestDispatcher rd=request.getRequestDispatcher("Orders.jsp");
+					rd.forward(request, response);
+			    	
+			     }
 			}else {
-				message = "Please check you Account ID and Confirm Account ID";
+				message = "Your Account Number and Confirm Account Numer is not equal";
 			    request.setAttribute("feedbackmessage",message);
 			    RequestDispatcher rd=request.getRequestDispatcher("Orders.jsp");
 			    rd.forward(request, response);
