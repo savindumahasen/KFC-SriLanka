@@ -144,19 +144,19 @@
       Order Your Meals and Beverages
     </div>
 
-    <p style="color:black">${feedbackmessage}</p>
+    <p style="color:red">${feedbackmessage}</p>
 
     <!-- Error message for validation -->
     <div id="error-message"></div>
 
-    <form action="orderscontroller" method="post" onsubmit="return validateExactLength()">
+    <form action="orderscontroller" method="post">
      
       <div class="mb-3">
         <label for="accountid" class="form-label">Please Enter Your Account Number</label>
-        <input type="password" class="form-control" id="accountid" name="accountnumber" placeholder="Enter Account Number" maxlength="8" required>
+        <input type="password" class="form-control" id="accountid" name="accountnumber" placeholder="Enter Account Number" required>
         <br/>
         <label for="confirmaccountid" class="form-label">Please Enter Your Account Number Again</label>
-        <input type="password" class="form-control" id="confirmaccountid" name="confirmaccountnumber" placeholder="Enter Account Number Again" maxlength="8" required>
+        <input type="password" class="form-control" id="confirmaccountid" name="confirmaccountnumber" placeholder="Enter Account Number Again"  required>
          
         <input type="hidden" name="action_type" value="order_now">
       </div>
@@ -164,24 +164,6 @@
     </form>
   </div>
 </div>
-
-<script>
-function validateExactLength() {
-  const accountNumber = document.getElementById('accountid').value;
-  const confirmAccountNumber = document.getElementById('confirmaccountid').value;
-  const errorMessage = document.getElementById('error-message');
-
-  // Check if both fields have exactly 8 digits
-  if (accountNumber.length !== 12) {
-    errorMessage.textContent = "Account Number must be exactly 8 digits.";
-    return false;
-  }
-
-  // Clear the error message and allow form submission
-  errorMessage.textContent = "";
-  return true;
-}
-</script>
 
 </body>
 </html>
